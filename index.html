@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Celebração Mágica ✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor mágico personalizado -->
+    <div class="magic-cursor"></div>
+    
+    <!-- Partículas mágicas de fundo -->
+    <div class="magic-particles"></div>
+    
+    <!-- Seção Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="magic-wand" id="magicWand">✨</div>
+            <h1 class="hero-title">
+                <span class="magic-text">Bem-vindo a </span>
+                <span class="celebration-text">Melhor data do Ano!</span>
+            </h1>
+            <p class="hero-subtitle">
+                Junte-se a nós numa jornada encantadora para celebrar o dia especial de alguém muito querido!
+            </p>
+            <button class="magic-button" id="startJourney">
+                <span>Iniciar a Magia</span>
+                <div class="button-sparkles"></div>
+            </button>
+        </div>
+        
+        <!-- Balões flutuantes -->
+        <div class="floating-balloons">
+            <div class="balloon balloon-1">🎈</div>
+            <div class="balloon balloon-2">🎈</div>
+            <div class="balloon balloon-3">🎈</div>
+            <div class="balloon balloon-4">🎈</div>
+        </div>
+    </section>
+
+    <!-- Seção de Memórias -->
+    <section class="memories-section" id="memoriesSection">
+        <div class="section-header">
+            <h2>Capítulo 1: Memórias Preciosas</h2>
+            <div class="magic-line"></div>
+        </div>
+        
+        <div class="memories-grid">
+            <div class="memory-card" data-reveal="Primeira memória especial juntos...">
+                <div class="card-front">
+                    <div class="memory-icon">📸</div>
+                    <h3>Nossa Primeira Foto</h3>
+                    <!-- Adicionando área para upload de foto -->
+                    <div class="photo-upload-area" id="photoUpload1">
+                        <input type="file" accept="image/*" id="photoInput1" style="display: none;">
+                        <div class="upload-placeholder" onclick="document.getElementById('photoInput1').click()" style="display: none;">
+                            <span>📷 Clique para adicionar foto</span>
+                        </div>
+                        <img class="uploaded-photo" id="uploadedPhoto1" src="THAISSA/images/th.jpg" style="display: block;">
+                    </div>
+                </div>
+                <div class="card-back">
+                    <p>O dia em que nos conhecemos foi verdadeiramente mágico!</p>
+                </div>
+            </div>
+            
+            <div class="memory-card" data-reveal="Momentos de risadas e alegria...">
+                <div class="card-front">
+                    <div class="memory-icon">🥰</div>
+                    <h3>Nossos Momentos</h3>
+                    <!-- Adicionando área para upload de foto -->
+                    <div class="photo-upload-area" id="photoUpload2">
+                        <input type="file" accept="image/*" id="photoInput2" style="display: none;">
+                        <div class="upload-placeholder" onclick="document.getElementById('photoInput2').click()" style="display: none;">
+                        </div>
+                        <!-- Corrigindo caminho da foto para usar a imagem enviada -->
+                        <img class="uploaded-photo" id="uploadedPhoto2" src="THAISSA/images/thaissa.jpg" style="display: block;">
+                    </div>
+                </div>
+                <div class="card-back">
+                    <p>Cada momento ao seu lado é repleto de alegria e sorrisos!</p>
+                </div>
+            </div>
+            
+            <div class="memory-card" data-reveal="Aventuras inesquecíveis...">
+                <div class="card-front">
+                    <div class="memory-icon">❤️🖤</div>
+                    <h3>Aventuras Juntos</h3>
+                    <!-- Adicionando área para upload de foto -->
+                    <div class="photo-upload-area" id="photoUpload3">
+                        <input type="file" accept="image/*" id="photoInput3" style="display: none;">
+                        <div class="upload-placeholder" onclick="document.getElementById('photoInput3').click()">
+                            <span>📷 Clique para adicionar foto</span>
+                        </div>
+                        <img class="uploaded-photo" id="uploadedPhoto3" style="display: none;">
+                    </div>
+                </div>
+                <div class="card-back">
+                    <p>Cada aventura com você se torna uma história especial!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Desejos -->
+    <section class="wishes-section" id="wishesSection">
+        <div class="section-header">
+            <h2>Capítulo 2: Desejos Mágicos</h2>
+            <div class="magic-line"></div>
+        </div>
+        
+        <div class="wish-container">
+            <div class="wish-input-area">
+                <textarea id="wishInput" placeholder="Escreva seu desejo mágico aqui..."></textarea>
+                <button class="send-wish-btn" id="sendWish">
+                    <span>Enviar Desejo</span>
+                    <div class="wish-sparkles">✨</div>
+                </button>
+            </div>
+            
+            <div class="wishes-display" id="wishesDisplay">
+                <div class="wish-bubble">🌟 Que este novo ano seja repleto de alegrias, especialmente comigo haha!</div>
+                <div class="wish-bubble">💫 Que todos os seus sonhos se realizem!</div>
+                <div class="wish-bubble">🎉 Feliz aniversário para uma pessoa que chegou pra ficar na minha vida! você é benção e luz na minha vida, Te amo princesa.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Final -->
+    <section class="finale-section">
+        <div class="finale-content">
+            <h2>Capítulo Final:</h2>
+            <h3>Gratidão por está na minha vida, eu nunca ia imaginar que uma coca cola 😂 ia fazer eu conhecer uma das melhores pessoas que eu conheci nessa vida.</h3>
+    
+            <p class="finale-message">
+                Obrigado por tornar este dia inesquecível! nem nos meus melhores sonhos eu achava que eu ia encontrar alguém como você.
+            </p>
+            
+            <div class="birthday-cake" id="birthdayCake">
+                <div class="cake-base">🎂</div>
+                <div class="candles">
+                    <div class="candle">🕯️</div>
+                    <div class="candle">🕯️</div>
+                    <div class="candle">🕯️</div>
+                </div>
+                <button class="blow-candles" id="blowCandles">Soprar as Velas</button>
+            </div>
+        </div>
+        
+        <!-- Confetes -->
+        <div class="confetti-container" id="confettiContainer"></div>
+    </section>
+
+    <!-- Mensagens ocultas que aparecem com o cursor mágico -->
+    <div class="hidden-messages">
+        <div class="hidden-message" data-x="20" data-y="30">Você é incrível! ✨</div>
+        <div class="hidden-message" data-x="70" data-y="50">Parabéns! 🎉</div>
+        <div class="hidden-message" data-x="40" data-y="80">Feliz aniversário! 🎂</div>
+        <div class="hidden-message" data-x="80" data-y="20">Você merece o mundo! 🌟</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

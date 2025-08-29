@@ -389,7 +389,13 @@ section {
   gap: clamp(1rem, 3vw, 2rem);
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .memories-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 .memory-card {
@@ -919,13 +925,4 @@ section {
   .wish-container {
     max-width: 1000px;
   }
-}
-
-/* Garantindo que as seções apareçam na ordem correta */
-.memories-section,
-.wishes-section,
-.finale-section {
-  display: block;
-  width: 100%;
-  clear: both;
 }

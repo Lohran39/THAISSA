@@ -385,19 +385,19 @@ section {
 /* Grid de memórias responsivo */
 .memories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(1rem, 3vw, 2rem);
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 1000px;
   margin: 0 auto;
   width: 100%;
-  min-height: auto;
   justify-items: center;
 }
 
 @media (min-width: 768px) {
   .memories-grid {
     grid-template-columns: repeat(3, 1fr);
-    max-width: 1000px;
+    max-width: 900px;
+    gap: 1.5rem;
   }
 }
 
@@ -410,11 +410,22 @@ section {
 
 .memory-card {
   position: relative;
-  height: clamp(400px, 65vw, 550px);
+  height: clamp(300px, 45vw, 400px);
   perspective: 1000px;
   cursor: pointer;
   width: 100%;
-  max-width: 320px;
+  max-width: 280px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1);
+  border: 2px solid #f8bbd9;
+  transition: all 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(233, 30, 99, 0.2);
 }
 
 /* Seção de desejos responsiva */
@@ -550,7 +561,7 @@ section {
 .photo-upload-area {
   margin-top: 1rem;
   width: 100%;
-  height: 500px;
+  height: 180px;
   border: 2px dashed #f8bbd9;
   border-radius: 10px;
   display: flex;
@@ -584,7 +595,7 @@ section {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid #f8bbd9;
+  border: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -609,16 +620,13 @@ section {
 /* Responsividade para áreas de foto */
 @media (max-width: 480px) {
   .photo-upload-area {
-    height: 420px;
-  }
-
-  .upload-placeholder {
-    font-size: 0.8rem;
+    height: 160px;
   }
 
   .memory-card {
     max-width: 100%;
-    height: 380px;
+    height: 280px;
+    padding: 1rem;
   }
 }
 

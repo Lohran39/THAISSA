@@ -530,30 +530,67 @@ section {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsividade melhorada para mobile */
+/* Responsividade melhorada para mobile - ajustando fotos para não cortarem */
 @media (max-width: 480px) {
   .photo-upload-area {
-    height: clamp(250px, 40vw, 300px);
+    height: clamp(220px, 35vw, 280px);
+    padding: 8px;
+  }
+
+  .uploaded-photo {
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    top: 8px;
+    left: 8px;
+    background: rgba(255, 255, 255, 0.9);
   }
 
   .memory-card {
     max-width: 100%;
-    height: clamp(350px, 55vw, 450px);
+    height: clamp(320px, 50vw, 400px);
   }
 
   .card-front,
   .card-back {
-    padding: 1rem;
+    padding: 0.8rem;
+  }
+
+  .memory-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 }
 
 @media (max-width: 320px) {
   .photo-upload-area {
-    height: 220px;
+    height: 200px;
+    padding: 6px;
+  }
+
+  .uploaded-photo {
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    top: 6px;
+    left: 6px;
   }
 
   .memory-card {
-    height: 320px;
+    height: 280px;
+  }
+}
+
+/* Ajustes específicos para tablets em orientação portrait */
+@media (max-width: 768px) and (orientation: portrait) {
+  .uploaded-photo {
+    object-fit: contain;
+    padding: 4px;
+  }
+
+  .photo-upload-area {
+    height: clamp(240px, 40vw, 320px);
   }
 }
 

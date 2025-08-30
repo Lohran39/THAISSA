@@ -398,11 +398,15 @@ section {
   }
 }
 
+/* Melhorando estilos dos cards de memórias para melhor apresentação das fotos */
 .memory-card {
   position: relative;
-  height: clamp(400px, 65vw, 550px); /* Aumentado de clamp(350px, 60vw, 500px) */
+  height: clamp(400px, 65vw, 550px);
   perspective: 1000px;
   cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .card-front,
@@ -415,22 +419,24 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: clamp(1rem, 3vw, 2rem);
-  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+  justify-content: flex-start;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  box-shadow: 0 15px 35px rgba(233, 30, 99, 0.2);
   transition: transform 0.6s ease;
+  border: 2px solid #f8bbd9;
 }
 
 .card-front {
   background: linear-gradient(135deg, #ffffff, #fef7f7);
   color: #4a1c40;
-  border: 2px solid #f8bbd9;
+  transform: rotateY(0deg);
 }
 
 .card-back {
   background: linear-gradient(135deg, #e91e63, #f06292);
   color: #ffffff;
   transform: rotateY(180deg);
+  justify-content: center;
 }
 
 .memory-card:hover .card-front {
@@ -442,21 +448,113 @@ section {
 }
 
 .memory-icon {
-  font-size: clamp(2rem, 6vw, 3rem);
-  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  display: block;
 }
 
 .memory-card h3 {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.1rem, 2.8vw, 1.4rem);
   font-weight: 700;
+  color: #4a1c40;
+  margin-bottom: 1rem;
   text-align: center;
+  text-shadow: 1px 1px 2px rgba(233, 30, 99, 0.1);
 }
 
 .card-back p {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   text-align: center;
   line-height: 1.6;
   font-style: italic;
+  font-weight: 500;
+}
+
+/* Melhorando área de upload de fotos para melhor apresentação */
+.photo-upload-area {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: clamp(280px, 45vw, 350px);
+  border: 2px dashed #f8bbd9;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 187, 217, 0.1) 100%);
+  flex-grow: 1;
+}
+
+.photo-upload-area:hover {
+  border-color: #e91e63;
+  background: rgba(233, 30, 99, 0.08);
+  transform: scale(1.02);
+}
+
+.uploaded-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.2);
+}
+
+.uploaded-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+}
+
+/* Removendo estilos conflitantes e simplificando */
+.photo-uploaded {
+  position: relative;
+}
+
+.photo-uploaded::after {
+  content: "💕";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 1.5rem;
+  animation: heart-pulse 2s infinite;
+  z-index: 10;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade melhorada para mobile */
+@media (max-width: 480px) {
+  .photo-upload-area {
+    height: clamp(250px, 40vw, 300px);
+  }
+
+  .memory-card {
+    max-width: 100%;
+    height: clamp(350px, 55vw, 450px);
+  }
+
+  .card-front,
+  .card-back {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .photo-upload-area {
+    height: 220px;
+  }
+
+  .memory-card {
+    height: 320px;
+  }
 }
 
 /* Seção de desejos responsiva */
@@ -585,81 +683,6 @@ section {
   to {
     opacity: 1;
     transform: translateX(0) scale(1);
-  }
-}
-
-/* Adicionando estilos para upload de fotos */
-.photo-upload-area {
-  margin-top: 1rem;
-  width: 100%;
-  height: 500px; /* Aumentado de 450px para 500px */
-  border: 2px dashed #f8bbd9;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.photo-upload-area:hover {
-  border-color: #e91e63;
-  background: rgba(233, 30, 99, 0.05);
-}
-
-.upload-placeholder {
-  cursor: pointer;
-  text-align: center;
-  color: #6d2c5a;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.upload-placeholder:hover {
-  color: #e91e63;
-  transform: scale(1.05);
-}
-
-.uploaded-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid #f8bbd9;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 0;
-}
-
-.photo-uploaded {
-  position: relative;
-}
-
-.photo-uploaded::after {
-  content: "💕";
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 1.2rem;
-  animation: heart-pulse 2s infinite;
-  z-index: 10;
-}
-
-/* Responsividade para áreas de foto */
-@media (max-width: 480px) {
-  .photo-upload-area {
-    height: 420px; /* Aumentado de 380px para 420px */
-  }
-
-  .upload-placeholder {
-    font-size: 0.8rem;
   }
 }
 
@@ -901,7 +924,7 @@ section {
   }
 }
 
-/* Ajustes para tablets */
+/* Ajustes específicos para tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
   .wish-container {
     max-width: 90vw;
@@ -909,6 +932,10 @@ section {
 
   .memories-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .memory-card {
+    max-width: 280px;
   }
 }
 
@@ -925,4 +952,13 @@ section {
   .wish-container {
     max-width: 1000px;
   }
+}
+
+/* Garantindo que as seções apareçam na ordem correta */
+.memories-section,
+.wishes-section,
+.finale-section {
+  display: block;
+  width: 100%;
+  clear: both;
 }
